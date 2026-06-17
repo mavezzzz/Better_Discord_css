@@ -1,470 +1,542 @@
+/* ======================================================
+   1. VARIABLES
+====================================================== */
+
 :root {
+  /* Images */
   --theme-background-image: url("https://i.imgur.com/VYjAucth.jpg");
   --home-icon-image: url("https://i.imgur.com/0FzaR0C.jpeg");
   --home-icon-image-zoom: cover;
   --home-icon-image-position: center;
+
+  /* Transparency */
   --theme-transparency: rgba(0, 0, 0, 0.2);
   --message-box-transparency: rgba(0, 0, 0, 0.18);
+
+  /* Colors */
   --main-theme-color: #ff1f3d;
   --oled-red: #ff3156;
   --oled-red-soft: rgba(255, 49, 86, 0.2);
   --oled-red-glow: rgba(255, 49, 86, 0.38);
+
+  /* Scrollbar */
+  --scrollbar-color: rgba(255, 23, 64, 0.5);
+
+  /* Blur */
+  --blur-default: blur(5px);
+  --blur-heavy: blur(15px);
+
+  /* Unread server animation */
+  --unread-server-animation: rainbow;
 }
+
+
+/* ======================================================
+   2. MAIN BACKGROUND
+====================================================== */
 
 .appMount__51fd7 {
   background-color: #050000;
-  background-image: linear-gradient(
+
+  background-image:
+    linear-gradient(
       rgba(40, 0, 8, 0.2),
       rgba(0, 0, 0, 0.28)
     ),
     var(--theme-background-image);
+
   background-size: 112%;
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: soft-light, normal;
+
   filter: contrast(1.38) saturate(1.14);
 }
-.app__160d8 {
-  background: 0 0;
+
+
+/* ======================================================
+   3. TRANSPARENT LAYOUT
+====================================================== */
+
+/* Base */
+
+.app__160d8,
+.wrapper_ef3116,
+.container__2637a,
+.themed__9293f,
+.layer__960e4,
+.root_bfe55a,
+.wrapper_cb9592,
+.callContainer_cb9592,
+.resizeHandle__01ae2,
+.chatLayerWrapper__01ae2,
+.channelChatWrapper_cb9592,
+.wrapper_fc8177,
+.standardSidebarView__23e6b,
+.sidebarRegionScroller__23e6b,
+.contentRegion__23e6b,
+.container__133bf,
+.tabBody__133bf {
+  background: transparent;
 }
+
+
+/* Chat */
+
+.chat_f75fb0,
+.chatContent_f75fb0,
+.chatGradient__36d07,
+.chatTypingGradientAtBottom__36d07,
+.chatTypingGradientNotAtBottom__36d07 {
+  background: transparent;
+}
+
+
+/* Sidebar */
+
+.privateChannels__35e86,
+.privateChannels_e6b769,
+.wrapper_d852db {
+  background: transparent;
+}
+
+
+/* Members */
+
+.container_c8ffbb,
+.members_c8ffbb,
+.membersWrap_c8ffbb,
+.member_c8ffbb,
+.nowPlayingColumn__133bf,
+.container__7d20c {
+  background-color: transparent;
+}
+
+
+/* Settings */
+
+.contentRegionScroller__23e6b,
+.channelAttachmentArea_b77158,
+.upload_aa605f,
+.codeView__4d95d,
+.panel__5dec7,
+.scroller__28a87,
+.titleContainer_e29cd7,
+.header_c6bf1b,
+.scroller__53543 {
+  background-color: transparent;
+}
+
+
+/* ======================================================
+   4. OVERLAY
+====================================================== */
+
 .bg__960e4 {
   background: var(--theme-transparency);
 }
-.wrapper_ef3116 {
-  background: 0 0;
-}
-.panels__5e434 {
+
+
+/* ======================================================
+   5. BLUR COMPONENTS
+====================================================== */
+
+/* Bottom bar (mic, headphones, settings) */
+.panels__5e434,
+
+/* Message input */
+.channelTextArea_f75fb0,
+
+/* Search bar */
+.searchBar__5ec2f,
+
+.itemCard__7e549.wrapper__00943.outer_bf1984.padded_bf1984.interactive_bf1984,
+
+.embedFull__623de,
+
+.footer__4d95d,
+
+.container__0f2e8,
+
+.container__01ae2,
+
+.mainCard_f369db {
+
   background: var(--message-box-transparency);
-  backdrop-filter: blur(5px);
+  backdrop-filter: var(--blur-default);
 }
-.sidebar_c48ade:after {
-  background: 0 0;
+
+
+/* Code blocks */
+
+.textContainer__4d95d {
+  background-color: transparent;
+  backdrop-filter: var(--blur-heavy);
 }
-.container__2637a {
-  background: 0 0;
+
+
+/* User card hover */
+
+.container_faa96b:hover {
+  background: transparent;
+  backdrop-filter: var(--blur-heavy);
 }
-.chat_f75fb0 {
-  background: 0 0;
-}
-.chatContent_f75fb0 {
-  background: 0 0;
-}
-.themed__9293f {
-  background: 0 0;
-}
-.container_c8ffbb {
-  background: 0 0;
-}
-.members_c8ffbb {
-  background: 0 0;
-}
-.channelTextArea_f75fb0 {
-  background: var(--message-box-transparency);
-}
+
+
+/* ======================================================
+   6. LINKS
+====================================================== */
 
 a,
 .anchor_edefb8 {
   color: var(--oled-red) !important;
 }
 
+
+/* ======================================================
+   7. MESSAGE BUBBLES
+====================================================== */
+
+/* Message text */
+
 .message__5126c .messageContent_c19a55,
 [class^="message_"] [class*="messageContent"],
 [class*=" message_"] [class*="messageContent"] {
+
   color: #ff2448 !important;
+
   width: fit-content;
   max-width: calc(100% - 16px);
+
   padding: 4px 20px;
+
   border-radius: 6px;
-  background: rgba(0, 0, 0, 0.22) !important;
-  box-shadow: none;
+
+  background: rgba(0,0,0,.22) !important;
+
   line-height: 1.45;
+
+  box-shadow: none;
+
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
+
+/* Message hover */
+
 .message__5126c:hover .messageContent_c19a55,
 [class^="message_"]:hover [class*="messageContent"],
 [class*=" message_"]:hover [class*="messageContent"] {
-  background: rgba(0, 0, 0, 0.28) !important;
+
+  background: rgba(0,0,0,.28) !important;
+
   box-shadow: none;
 }
+
+
+/* ======================================================
+   8. USER AVATAR
+====================================================== */
+
+/* Avatar beside message */
 
 .message__5126c .avatar_c19a55,
 [class^="message_"] [class*="avatar"],
 [class*=" message_"] [class*="avatar"] {
-  transform: translate(-14px, -13px);
+
+  transform: translate(-14px,-13px);
 }
+
+
+/* ======================================================
+   9. SELECTION
+====================================================== */
 
 ::selection {
   background: var(--oled-red-glow);
-  color: #ffffff;
+  color: #fff;
 }
 
+
+/* ======================================================
+   10. SCROLLBAR
+====================================================== */
+
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 23, 64, 0.5) !important;
+  background-color: var(--scrollbar-color);
 }
+
+
+/* ======================================================
+   11. BUTTONS
+====================================================== */
 
 button,
 [role="button"] {
+
+  /* Positive buttons */
   --button-positive-background: var(--oled-red);
-  --button-danger-background: var(--oled-red);
+
+  /* Danger buttons use Discord default */
 }
-.themedBackground__74017 {
-  background: 0 0;
+
+
+/* ======================================================
+   12. RAINBOW ANIMATION
+====================================================== */
+
+@keyframes rainbow {
+
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+
 }
-.privateChannels__35e86 {
-  background: 0 0;
-}
-.scroller__99e7c {
-  background: 0 0;
-}
-.children__9293f:after {
-  background: 0 0;
-}
+
+/* ======================================================
+   13. SERVER LIST
+====================================================== */
+
 .wrapper_ef3116 {
   width: var(--server-listing-width);
 }
+
 .itemsContainer_ef3116 {
   width: calc(var(--server-listing-width) + 6px);
 }
+
 .wrapper_ef3116 .scroller_ef3116 {
   display: flex;
   flex-flow: row wrap;
-  padding-left: 0;
   align-content: flex-start;
+  justify-content: center;
+  padding-left: 0;
 }
+
+.stack_dbd263 {
+  justify-content: center !important;
+}
+
 .stack_dbd263 .listItem__650eb:not(.wrapper__48112 .listItem__650eb) {
   width: initial;
   padding: 1px;
   margin: 2px;
 }
-.stack_dbd263 {
-  justify-content: center !important;
-}
-.stack_dbd263 .wrapper__48112 .listItem__650eb {
-  width: initial;
-}
+
 .scroller_ef3116 > .listItem__650eb {
   width: 100%;
 }
-.listItem-GuPuDH {
-  width: auto;
-  margin-left: 0;
-}
-.wrapper-21YSNc {
-  position: relative;
-  width: auto;
-}
-@keyframes rainbow {
-  0% {
-    -webkit-filter: hue-rotate(0);
-    -moz-filter: hue-rotate(0);
-    -ms-filter: hue-rotate(0);
-    filter: hue-rotate(0);
-  }
-  100% {
-    -webkit-filter: hue-rotate(360deg);
-    -moz-filter: hue-rotate(360deg);
-    -ms-filter: hue-rotate(360deg);
-    filter: hue-rotate(360deg);
-  }
-}
+
+
+/* ======================================================
+   14. SERVER INDICATORS
+====================================================== */
+
 .wrapper__58105 {
   overflow: visible !important;
 }
+
 .wrapper__58105.overlay__58105 {
   width: 100% !important;
 }
+
 .overlay__58105 {
   top: initial !important;
 }
+
+
+/* Unread server border */
+
 .item__58105 {
+
   animation: var(--unread-server-animation) 3s linear infinite;
+
   border: 2px solid var(--main-theme-color);
-  background: 0 0;
+
+  background: transparent;
+
   display: block;
-  border-radius: 30% !important;
+
   position: absolute;
+
   transform: none !important;
+
   inset: 0 !important;
+
   top: -2px !important;
   left: 2px !important;
+
   width: 100%;
   height: 100% !important;
+
+  border-radius: 30% !important;
 }
+
+
+/* Disable overlay */
+
 .wrapper__58105.overlay__58105 .item__58105:not([style*="height: 8px"]) {
   border-color: transparent;
   background-color: initial;
 }
-#guild-list-unread-dms .item__58105 {
+
+
+/* Hide DM indicators */
+
+#guild-list-unread-dms .item__58105,
+#guild-list-unread-dms .pill_ed9a5f {
   display: none !important;
 }
-.stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2 {
-  justify-content: center;
-}
-.itemsContainer_ef3116 .stack_dbd263 {
-  display: flex !important;
-  flex-direction: column !important;
-  flex-flow: row wrap !important;
-  align-items: flex-start !important;
-}
-.wrapper__67dba .stack_dbd263 {
-  display: initial !important;
-  flex-direction: initial !important;
-  flex-flow: initial !important;
-  align-items: initial !important;
-}
-.tutorialContainer__1f388 {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.stack_dbd263 .wrapper__48112 {
-  width: fit-content !important;
-}
-.stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2
-  > .listItem__650eb {
-  margin-bottom: 8px;
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2:last-child
-  .listItem__650eb {
-  width: initial;
-}
-.stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2:last-child
-  .listItem__650eb
-  .pill__5bc7e {
-  display: none !important;
-}
-.wrapper__48112.isExpanded__48112 .listItem__650eb {
-  width: 100% !important;
-}
-.stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2
-  > div
-  .listItem__650eb
-  .pill_ed9a5f.wrapper__58105 {
-  display: none !important;
-}
-.wrapper__48112.isExpanded__48112 .stack_dbd263 {
-  height: fit-content !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-.wrapper__48112.isExpanded__48112 .listItem__650eb {
-  width: 100%;
-}
-.wrapper__48112.isExpanded__48112
-  .stack_dbd263
-  .listItem__650eb
-  .pill_e5445c.wrapper__58105
-  .item__58105 {
-  width: 85% !important;
-  height: 100% !important;
-  left: 5px !important;
-  top: -2px !important;
-}
-.wrapper__48112.isExpanded__48112 .stack_dbd263 {
-  overflow: visible;
-}
-.expandedFolderBackground__48112 {
-  left: 0;
-}
-.tutorialContainer__1f388 .listItem__650eb .pill__1f388.wrapper__58105 {
-  display: none;
-}
-.wrapper__6e9f8 .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 svg {
-  display: none;
-}
-.listItemWrapper__91816
-  .wrapper_cc5dd2
-  .wrapper__6e9f8
-  .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 {
-  background-image: var(--home-icon-image);
-  background-size: var(--home-icon-image-zoom);
-  background-position: var(--home-icon-image-position);
-  background-repeat: no-repeat;
-}
-.tutorialContainer__1f388
-  .wrapper_cc5dd2
-  .wrapper__6e9f8
-  .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 {
-  background-color: initial;
-}
+
+
+/* ======================================================
+   15. FOLDERS
+====================================================== */
+
 .folderGroup__48112 {
   width: 54px !important;
 }
-.folderGroup__48112:not(.isExpanded__48112)
-  .listItem__650eb
-  .pill_e5445c.wrapper__58105
-  .item__58105 {
-  margin-left: -3px !important;
-  width: 48px !important;
-}
-.stack_dbd263.folderGuildsList__48112 {
-  height: 100% !important;
-}
+
 .folderGroupBackground__48112 {
   left: 3px;
 }
-.unreadMentionsIndicatorTop_ef3116 {
-  justify-self: center;
+
+.stack_dbd263.folderGuildsList__48112 {
+  height: 100% !important;
 }
-.wrapper_ef3116 .scroller_ef3116 {
-  justify-content: center;
+
+.expandedFolderBackground__48112 {
+  left: 0;
 }
-.tabBody__133bf {
-  background: 0 0;
+
+.wrapper__48112.isExpanded__48112 .stack_dbd263 {
+  overflow: visible;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  height: fit-content !important;
 }
-.container__133bf {
-  background: 0 0;
+
+.wrapper__48112.isExpanded__48112 .listItem__650eb {
+  width: 100% !important;
 }
-.member_c8ffbb {
-  background-color: initial;
+
+
+/* ======================================================
+   16. HOME ICON
+====================================================== */
+
+/* Hide Discord logo */
+
+.wrapper__6e9f8
+.childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8
+svg {
+
+  display: none;
 }
-.nowPlayingColumn__133bf {
-  background-color: initial;
+
+
+/* Custom Home icon */
+
+.listItemWrapper__91816
+.wrapper_cc5dd2
+.wrapper__6e9f8
+.childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 {
+
+  background-image: var(--home-icon-image);
+
+  background-size: var(--home-icon-image-zoom);
+
+  background-position: var(--home-icon-image-position);
+
+  background-repeat: no-repeat;
 }
-.container__7d20c {
-  background-color: initial;
-}
-.wrapper_d852db {
-  background: 0 0;
-}
-.wrapper_fc8177 {
-  background: 0 0;
-}
-.standardSidebarView__23e6b {
-  background: 0 0;
-}
-.sidebarRegionScroller__23e6b {
-  background: 0 0;
-}
-.layer__960e4 {
-  background: 0 0;
-}
-.contentRegion__23e6b {
-  background: 0 0;
-}
-.contentRegionScroller__23e6b {
-  background-color: initial;
-}
-.channelAttachmentArea_b77158 {
-  background-color: initial;
-}
-.upload_aa605f {
-  background-color: initial;
-}
+
+
+/* ======================================================
+   17. GUILD CLEANUP
+====================================================== */
+
+/* Hide separator */
+
 .guildSeparator__252b6 {
   display: none;
 }
-.searchBar__5ec2f {
-  background-color: initial;
-  backdrop-filter: blur(5px);
-}
-.itemCard__7e549.wrapper__00943.outer_bf1984.padded_bf1984.interactive_bf1984 {
-  background-color: initial;
-  backdrop-filter: blur(5px);
-}
-.embedFull__623de {
-  background-color: initial !important;
-  backdrop-filter: blur(5px);
-}
-.footer__4d95d {
-  background: 0 0;
-  backdrop-filter: blur(5px);
-}
-.textContainer__4d95d {
-  background-color: initial;
-  backdrop-filter: blur(15px) !important;
-}
-.codeView__4d95d {
-  background-color: initial;
-}
-.container__0f2e8 {
-  background-color: initial !important;
-  backdrop-filter: blur(5px);
-}
-.panel__5dec7 {
-  background-color: initial !important;
-}
-.scroller__28a87 {
-  background-color: initial;
-}
-.root_bfe55a {
-  background: 0 0;
-}
-.wrapper_cb9592 {
-  background: 0 0;
-}
-.callContainer_cb9592 {
-  background: 0 0;
-}
-.resizeHandle__01ae2 {
-  background: 0 0;
-}
-.container__01ae2 {
-  background: 0 0;
-  backdrop-filter: blur(5px);
-}
-.chatLayerWrapper__01ae2 {
-  background: 0 0;
-}
-.channelChatWrapper_cb9592 {
-  background: 0 0;
-}
-.container_f369db {
-  background: 0 0;
-}
-.mainCard_f369db {
-  background: 0 0;
-  backdrop-filter: blur(5px);
-}
-.container_faa96b:hover {
-  background: 0 0;
-  backdrop-filter: blur(15px);
-}
-.membersWrap_c8ffbb {
-  background-color: initial;
-}
-.privateChannels_e6b769 {
-  background: 0 0;
-}
-.chatGradient__36d07 {
-  background: 0 0;
-}
-.chatTypingGradientAtBottom__36d07,
-.chatTypingGradientNotAtBottom__36d07 {
-  background: 0 0;
-}
-.themed__9293f {
-  background: 0 0 !important;
-}
-.sidebar__5e434:after {
-  background: 0 0;
-}
-.chatGradient__36d07 {
-  background: 0 0;
-}
-#guild-list-unread-dms .pill_ed9a5f {
+
+
+/* Hide tutorial indicator */
+
+.tutorialContainer__1f388
+.listItem__650eb
+.pill__1f388.wrapper__58105 {
+
   display: none;
 }
-.titleContainer_e29cd7 {
-  background-color: initial;
-}
-.header_c6bf1b {
-  background-color: initial;
-}
-.scroller__53543 {
-  background-color: initial;
-}
+
+
+/* ======================================================
+   18. CHAT GRADIENTS
+====================================================== */
+
+/* Removed duplicated rules */
+
+.chatGradient__36d07,
+.chatTypingGradientAtBottom__36d07,
 .chatTypingGradientNotAtBottom__36d07 {
-  background: 0 0;
+
+  background: transparent;
 }
-.chatTypingGradientAtBottom__36d07 {
-  background: 0 0;
+
+
+/* ======================================================
+   19. ADDITIONAL TRANSPARENCY
+====================================================== */
+
+.themedBackground__74017,
+.container_f369db,
+.sidebar__5e434::after {
+
+  background: transparent;
 }
+
+
+/* ======================================================
+   20. MISC COMPONENTS
+====================================================== */
+
+/* Friends tab */
+
+.children__9293f::after {
+  background: transparent;
+}
+
+/* Title bar */
+
+.titleContainer_e29cd7 {
+  background-color: transparent;
+}
+
+/* Header */
+
+.header_c6bf1b {
+  background-color: transparent;
+}
+
+/* Member list */
+
+.membersWrap_c8ffbb {
+  background-color: transparent;
+}
+
+/* Scroll container */
+
+.scroller__53543 {
+  background-color: transparent;
+}
+
