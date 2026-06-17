@@ -1,6 +1,6 @@
 :root {
   --theme-background-image: url("https://i.imgur.com/gLMzalR.jpeg");
-  --home-icon-image: url("https://i.imgur.com/i5sSpVK.jpeg");
+ --home-icon-image: url("https://i.imgur.com/i5sSpVK.jpeg");
   --home-icon-image-zoom: cover;
   --home-icon-image-position: center;
 
@@ -13,16 +13,10 @@
 
 .appMount__51fd7 {
   background-color: var(--main-theme-color);
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0)
-    ),
-    var(--theme-background-image);
+  background-image: var(--theme-background-image);
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-blend-mode: soft-light, normal;
   filter: contrast(1.38) saturate(1.14);
 }
 
@@ -90,8 +84,8 @@ a,
 [class*=" message_"] [class*="messageContent"] {
   color: var(--main-theme-color) !important;
   text-shadow:
-    0 0 3px rgba(255,0,0,.35),
-    0 0 6px rgba(255,0,0,.15);
+    0 0 3px rgba(255, 0, 0, .35),
+    0 0 6px rgba(255, 0, 0, .15);
   width: fit-content;
   max-width: calc(100% - 16px);
   padding: 4px 20px;
@@ -121,8 +115,8 @@ a,
 .username__0b0e7 {
   color: var(--main-theme-color) !important;
   text-shadow:
-    0 0 4px rgba(255,0,0,.5),
-    0 0 8px rgba(255,0,0,.25);
+    0 0 4px rgba(255, 0, 0, .5),
+    0 0 8px rgba(255, 0, 0, .25);
 }
 
 ::selection {
@@ -211,8 +205,8 @@ button,
 .children__9293f {
   color: var(--main-theme-color) !important;
   text-shadow:
-    0 0 3px rgba(255,0,0,.35),
-    0 0 6px rgba(255,0,0,.15);
+    0 0 3px rgba(255, 0, 0, .35),
+    0 0 6px rgba(255, 0, 0, .15);
 }
 
 /* Direct Messages */
@@ -220,8 +214,8 @@ button,
 .privateChannels__35e86 [class*="channel"] {
   color: var(--main-theme-color) !important;
   text-shadow:
-    0 0 3px rgba(255,0,0,.35),
-    0 0 6px rgba(255,0,0,.15);
+    0 0 3px rgba(255, 0, 0, .35),
+    0 0 6px rgba(255, 0, 0, .15);
 }
 
 /* Channels and Sidebar Items */
@@ -229,8 +223,8 @@ button,
 .sidebar_c48ade [class*="link"] {
   color: var(--main-theme-color) !important;
   text-shadow:
-    0 0 3px rgba(255,0,0,.35),
-    0 0 6px rgba(255,0,0,.15);
+    0 0 3px rgba(255, 0, 0, .35),
+    0 0 6px rgba(255, 0, 0, .15);
 }
 
 /* Selected Items */
@@ -238,7 +232,7 @@ button,
 .selected__972a0,
 .selected__20a53 {
   color: #ffffff !important;
-  text-shadow: 0 0 8px rgba(255,255,255,.2);
+  text-shadow: 0 0 8px rgba(255, 255, 255, .2);
 }
 
 /* Red Neon Icons */
@@ -250,11 +244,12 @@ button,
 .panels__5e434 svg,
 .container__37e49 svg,
 .iconWrapper__9293f svg,
-.icon__9293f {
+.icon__9293f,
+.channelTextArea_f75fb0 svg {
   color: var(--main-theme-color) !important;
   filter:
-    drop-shadow(0 0 3px rgba(255,0,0,.5))
-    drop-shadow(0 0 7px rgba(255,0,0,.3));
+    drop-shadow(0 0 3px rgba(255, 0, 0, .5))
+    drop-shadow(0 0 7px rgba(255, 0, 0, .3));
 }
 
 /* Microphone, Headset and Settings Buttons */
@@ -264,8 +259,8 @@ button,
 [aria-label*="Configurações"] {
   color: var(--main-theme-color) !important;
   text-shadow:
-    0 0 4px rgba(255,0,0,.5),
-    0 0 8px rgba(255,0,0,.3);
+    0 0 4px rgba(255, 0, 0, .5),
+    0 0 8px rgba(255, 0, 0, .3);
 }
 
 /* Message Box Icons */
@@ -275,6 +270,6 @@ button,
 .channelTextArea__74017 svg {
   color: var(--main-theme-color) !important;
   filter:
-    drop-shadow(0 0 4px rgba(255,0,0,.15))
-    drop-shadow(0 0 8px rgba(255,0,0,.25));
+    drop-shadow(0 0 4px rgba(255, 0, 0, .15))
+    drop-shadow(0 0 8px rgba(255, 0, 0, .25));
 }
