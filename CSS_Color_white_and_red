@@ -1,6 +1,6 @@
 :root {
   --theme-background-image: url("https://i.imgur.com/gLMzalR.jpeg");
-  --home-icon-image: url("https://i.imgur.com/gKobCyA.png");
+  --home-icon-image: url("https://i.imgur.com/i5sSpVK.jpeg");
   --home-icon-image-zoom: cover;
   --home-icon-image-position: center;
 
