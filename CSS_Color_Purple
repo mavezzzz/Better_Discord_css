@@ -1,5 +1,10 @@
+/* ======================================================
+   1. VARIABLES
+====================================================== */
+
 :root {
   --theme-background-image: url("https://i.imgur.com/FJbuRhP.jpeg");
+
   --home-icon-image: url("https://i.imgur.com/gKobCyA.png");
   --home-icon-image-zoom: cover;
   --home-icon-image-position: center;
@@ -7,172 +12,333 @@
   --theme-transparency: rgba(0, 0, 0, 0.2);
   --message-box-transparency: rgba(0, 0, 0, 0.18);
 
-  /* Tema Roxo AMOLED */
+  /* AMOLED Purple Theme */
   --main-theme-color: #9333ea;
   --oled-purple: #b651c3;
   --oled-purple-soft: rgba(192, 38, 211, 0.18);
   --oled-purple-glow: rgba(182, 81, 195, 0.45);
+
+  /* Scrollbar */
+  --scrollbar-color: rgba(140, 50, 225, 0.64);
 }
+
+
+/* ======================================================
+   2. MAIN BACKGROUND
+====================================================== */
 
 .appMount__51fd7 {
   background-color: #050008;
+
   background-image:
     linear-gradient(
       rgba(45, 0, 70, 0.22),
       rgba(0, 0, 0, 0.35)
     ),
     var(--theme-background-image);
+
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: soft-light, normal;
+
   filter: contrast(1.38) saturate(1.14);
 }
 
+
+/* ======================================================
+   3. TRANSPARENT LAYOUT
+====================================================== */
+
+/* Base layers */
+
 .app__160d8,
 .bg__960e4,
-.wrapper_ef3116,
-.container__2637a,
+.layer__960e4 {
+  background: transparent !important;
+}
+
+/* Chat area */
+
 .chat_f75fb0,
 .chatContent_f75fb0,
-.themed__9293f,
-.container_c8ffbb,
-.members_c8ffbb,
-.privateChannels__35e86,
-.scroller__99e7c,
-.tabBody__133bf,
-.container__133bf,
-.wrapper_d852db,
-.wrapper_fc8177,
-.standardSidebarView__23e6b,
-.sidebarRegionScroller__23e6b,
-.layer__960e4,
-.contentRegion__23e6b,
-.root_bfe55a,
-.wrapper_cb9592,
-.callContainer_cb9592,
-.resizeHandle__01ae2,
-.chatLayerWrapper__01ae2,
-.channelChatWrapper_cb9592,
-.container_f369db,
-.privateChannels_e6b769,
 .chatGradient__36d07,
 .chatTypingGradientAtBottom__36d07,
 .chatTypingGradientNotAtBottom__36d07,
-.sidebar__5e434:after {
+.channelChatWrapper_cb9592,
+.chatLayerWrapper__01ae2 {
   background: transparent !important;
 }
+
+/* Sidebar */
+
+.wrapper_d852db,
+.standardSidebarView__23e6b,
+.sidebarRegionScroller__23e6b,
+.privateChannels__35e86,
+.privateChannels_e6b769 {
+  background: transparent !important;
+}
+
+/* Members panel */
+
+.container_c8ffbb,
+.members_c8ffbb,
+.membersWrap_c8ffbb {
+  background: transparent !important;
+}
+
+/* Calls */
+
+.wrapper_cb9592,
+.callContainer_cb9592 {
+  background: transparent !important;
+}
+
+/* Settings */
+
+.contentRegion__23e6b,
+.root_bfe55a,
+.tabBody__133bf,
+.container__133bf {
+  background: transparent !important;
+}
+
+/* Misc */
+
+.wrapper_ef3116,
+.container__2637a,
+.themed__9293f,
+.scroller__99e7c,
+.resizeHandle__01ae2,
+.sidebar__5e434::after {
+  background: transparent !important;
+}
+
+
+/* ======================================================
+   4. BACKGROUND OVERLAY
+====================================================== */
 
 .bg__960e4 {
   background: var(--theme-transparency) !important;
 }
 
+
+/* ======================================================
+   5. BLUR PANELS
+====================================================== */
+
+/* Bottom panel (mic, headphones, settings) */
 .panels__5e434,
+
+/* Message input */
 .channelTextArea_f75fb0,
+
+/* Search bar */
 .searchBar__5ec2f,
+
 .itemCard__7e549.wrapper__00943.outer_bf1984.padded_bf1984.interactive_bf1984,
+
+/* Embeds */
 .embedFull__623de,
+
+/* Code blocks */
 .footer__4d95d,
 .textContainer__4d95d,
+
 .container__0f2e8,
 .container__01ae2,
+
 .mainCard_f369db,
+
 .container_faa96b:hover {
   background: var(--message-box-transparency) !important;
   backdrop-filter: blur(8px);
 }
+
+
+/* ======================================================
+   6. LINKS
+====================================================== */
 
 a,
 .anchor_edefb8 {
   color: var(--oled-purple) !important;
 }
 
+
+/* ======================================================
+   7. MESSAGE BUBBLES
+====================================================== */
+
+/* Message text */
+
 .message__5126c .messageContent_c19a55,
 [class^="message_"] [class*="messageContent"],
 [class*=" message_"] [class*="messageContent"] {
+
   color: #ffffff !important;
+
   width: fit-content;
   max-width: calc(100% - 16px);
+
   padding: 4px 20px;
+
   border-radius: 6px;
+
   background: rgba(0, 0, 0, 0.22) !important;
+
   line-height: 1.45;
+
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
+
+/* Message hover */
+
 .message__5126c:hover .messageContent_c19a55,
 [class^="message_"]:hover [class*="messageContent"],
 [class*=" message_"]:hover [class*="messageContent"] {
+
   background: rgba(0, 0, 0, 0.30) !important;
 }
+
+
+/* ======================================================
+   8. USER AVATAR
+====================================================== */
+
+/* Message avatar */
 
 .message__5126c .avatar_c19a55,
 [class^="message_"] [class*="avatar"],
 [class*=" message_"] [class*="avatar"] {
+
   transform: translate(-14px, -13px);
 }
 
-/* Nicknames em branco */
+
+/* ======================================================
+   9. USERNAMES
+====================================================== */
+
 [class*="username"],
 [class*="headerText"] span,
 .username_c19a55,
 .username__0b0e7 {
+
   color: #ffffff !important;
+
   text-shadow: 0 0 6px rgba(255,255,255,0.2);
 }
+
+
+/* ======================================================
+   10. TEXT SELECTION
+====================================================== */
 
 ::selection {
   background: var(--oled-purple-glow);
   color: #fff;
 }
 
+
+/* ======================================================
+   11. SCROLLBAR
+====================================================== */
+
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(140, 50, 225, 0.636) !important;
+  background-color: var(--scrollbar-color) !important;
 }
+
+
+/* ======================================================
+   12. BUTTONS
+====================================================== */
 
 button,
 [role="button"] {
+
+  /* Positive buttons */
+
   --button-positive-background: var(--oled-purple);
-  --button-danger-background: var(--oled-purple);
-}
+
+  /* Danger buttons keep Discord default color */
+} 
+/* ======================================================
+   13. SERVER INDICATORS
+====================================================== */
+
+/* Server unread indicator */
 
 .item__58105 {
   border: 2px solid var(--main-theme-color);
   background: transparent;
+
   display: block;
-  border-radius: 30% !important;
   position: absolute;
+
   inset: 0 !important;
+
   top: -2px !important;
   left: 2px !important;
+
   width: 100%;
   height: 100% !important;
+
+  border-radius: 30% !important;
 }
+
+
+/* Disable overlay effect */
 
 .wrapper__58105.overlay__58105 .item__58105:not([style*="height: 8px"]) {
   border-color: transparent;
   background-color: initial;
 }
 
+
+/* Hide unread DM indicators */
+
 #guild-list-unread-dms .item__58105,
 #guild-list-unread-dms .pill_ed9a5f {
   display: none !important;
 }
 
-.wrapper__6e9f8 .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 svg {
+
+/* ======================================================
+   14. HOME ICON
+====================================================== */
+
+/* Hide default Discord logo */
+
+.wrapper__6e9f8
+.childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8
+svg {
   display: none;
 }
+
+
+/* Custom Home icon */
 
 .listItemWrapper__91816
 .wrapper_cc5dd2
 .wrapper__6e9f8
 .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 {
+
   background-image: var(--home-icon-image);
+
   background-size: var(--home-icon-image-zoom);
   background-position: var(--home-icon-image-position);
   background-repeat: no-repeat;
 }
+
+
+/* ======================================================
+   15. TRANSPARENCY FIXES
+====================================================== */
 
 .member_c8ffbb,
 .nowPlayingColumn__133bf,
@@ -187,56 +353,102 @@ button,
 .titleContainer_e29cd7,
 .header_c6bf1b,
 .scroller__53543 {
+
   background-color: transparent !important;
 }
 
+
+/* ======================================================
+   16. REMOVE UNUSED ELEMENTS
+====================================================== */
+
+/* Guild separator */
+
 .guildSeparator__252b6,
-.tutorialContainer__1f388 .listItem__650eb .pill__1f388.wrapper__58105 {
+
+/* Tutorial badge */
+
+.tutorialContainer__1f388
+.listItem__650eb
+.pill__1f388.wrapper__58105 {
+
   display: none;
 }
 
-/* ===== TEXTO BRANCO NA SIDEBAR ===== */
 
-/* Amigos, Nitro, Loja, Missões */
+/* ======================================================
+   17. SIDEBAR TEXT
+====================================================== */
+
+/* Friends, Nitro, Shop, Quests */
+
 .link__972a0,
 .interactive__972a0,
 .children__9293f {
-    color: #ffffff !important;
+
+  color: #ffffff;
 }
 
-/* Conversas privadas */
+
+/* Direct messages */
+
 .privateChannels__35e86 [class*="name"],
 .privateChannels__35e86 [class*="channel"] {
-    color: #ffffff !important;
+
+  color: #ffffff;
 }
 
-/* Canais e itens da sidebar */
+
+/* Server channels */
+
 .sidebar_c48ade [class*="name"],
 .sidebar_c48ade [class*="link"] {
-    color: #ffffff !important;
+
+  color: #ffffff;
 }
 
-/* Nicknames das mensagens */
-[class*="username"],
-[class*="headerText"] span,
-.username_c19a55,
-.username__0b0e7 {
-    color: #ffffff !important;
-    text-shadow: 0 0 6px rgba(255,255,255,0.2);
-}
 
-/* Servidores e DMs selecionados */
+/* ======================================================
+   18. SELECTED ITEMS
+====================================================== */
+
+/* Selected server/channel */
+
 .modeSelected__2ea32 .name__2ea32,
 .selected__972a0,
 .selected__20a53 {
-    color: #ffffff !important;
-    text-shadow: 0 0 8px rgba(255,255,255,0.2);
+
+  color: #ffffff;
+
+  text-shadow: 0 0 8px rgba(255,255,255,0.2);
 }
 
-/* Regra mais forte para garantir que nada fique roxo */
-.sidebar_c48ade *,
-.privateChannels__35e86 *,
-[class*="privateChannels"] *,
-[class*="sidebar"] [class*="name"] {
-    color: #ffffff !important;
+
+/* ======================================================
+   19. ADDITIONAL PANELS
+====================================================== */
+
+/* Activity panel */
+
+.container_f369db,
+
+/* Members panel */
+
+.members_c8ffbb,
+
+/* Private channels */
+
+.privateChannels_e6b769,
+
+/* Voice channel area */
+
+.container_faa96b,
+
+/* Main wrapper */
+
+.wrapper_fc8177 {
+
+  background-color: transparent !important;
 }
+
+
