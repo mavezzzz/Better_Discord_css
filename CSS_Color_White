@@ -1,0 +1,275 @@
+:root {
+  --theme-background-image: url("https://i.imgur.com/L20TbXz.jpeg");
+ --home-icon-image: url("https://i.imgur.com/hOEeIls.jpeg");
+  --home-icon-image-zoom: cover;
+  --home-icon-image-position: center;
+
+  --theme-transparency: rgba(157, 157, 157, 0);
+  --message-box-transparency: rgba(240, 0, 0, 0);
+
+  /* AMOLED White Theme */
+  --main-theme-color: #ffffff;
+}
+
+.appMount__51fd7 {
+  background-color: var(--main-theme-color);
+  background-image: var(--theme-background-image);
+  background-size: cover;
+  background-position: center,;
+  background-repeat: no-repeat;
+  filter: contrast(1.) saturate(1.);
+}
+
+.app__160d8,
+.bg__960e4,
+.wrapper_ef3116,
+.container__2637a,
+.chat_f75fb0,
+.chatContent_f75fb0,
+.themed__9293f,
+.container_c8ffbb,
+.members_c8ffbb,
+.privateChannels__35e86,
+.scroller__99e7c,
+.tabBody__133bf,
+.container__133bf,
+.wrapper_d852db,
+.wrapper_fc8177,
+.standardSidebarView__23e6b,
+.sidebarRegionScroller__23e6b,
+.layer__960e4,
+.contentRegion__23e6b,
+.root_bfe55a,
+.wrapper_cb9592,
+.callContainer_cb9592,
+.resizeHandle__01ae2,
+.chatLayerWrapper__01ae2,
+.channelChatWrapper_cb9592,
+.container_f369db,
+.privateChannels_e6b769,
+.chatGradient__36d07,
+.chatTypingGradientAtBottom__36d07,
+.chatTypingGradientNotAtBottom__36d07,
+.sidebar__5e434:after {
+  background: transparent !important;
+}
+
+.bg__960e4 {
+  background: var(--theme-transparency) !important;
+}
+
+.panels__5e434,
+.channelTextArea_f75fb0,
+.searchBar__5ec2f,
+.itemCard__7e549.wrapper__00943.outer_bf1984.padded_bf1984.interactive_bf1984,
+.embedFull__623de,
+.footer__4d95d,
+.textContainer__4d95d,
+.container__0f2e8,
+.container__01ae2,
+.mainCard_f369db,
+.container_faa96b:hover {
+  background: var(--message-box-transparency) !important;
+  backdrop-filter: blur(8px);
+}
+
+a,
+.anchor_edefb8 {
+  color: var(--main-theme-color) !important;
+}
+
+/* Message Text */
+.message__5126c .messageContent_c19a55,
+[class^="message_"] [class*="messageContent"],
+[class*=" message_"] [class*="messageContent"] {
+  color: #ffffff !important;
+  text-shadow:
+    0 0 3px rgb(0, 0, 0),
+    0 0 6px rgb(0, 0, 0);
+  width: fit-content;
+  max-width: calc(100% - 16px);
+  padding: 4px 20px;
+  border-radius: 6px;
+  background: transparent !important;
+  line-height: 1.45;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.message__5126c:hover .messageContent_c19a55,
+[class^="message_"]:hover [class*="messageContent"],
+[class*=" message_"]:hover [class*="messageContent"] {
+  background: transparent !important;
+}
+
+.message__5126c .avatar_c19a55,
+[class^="message_"] [class*="avatar"],
+[class*=" message_"] [class*="avatar"] {
+  transform: translate(-14px, -13px);
+}
+
+/* Username Text */
+[class*="username"],
+[class*="headerText"] span,
+.username_c19a55,
+.username__0b0e7 {
+  color: var(--main-theme-color) !important;
+  text-shadow:
+    0 0 4px rgba(206, 206, 206, 0.5),
+    0 0 8px rgb(255, 255, 255);
+}
+
+::selection {
+  background: var(--main-theme-color);
+  color: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-theme-color) !important;
+}
+
+button,
+[role="button"] {
+  --button-positive-background: var(--main-theme-color);
+  --button-danger-background: var(--main-theme-color);
+}
+
+.item__58105 {
+  border: 2px solid var(--main-theme-color);
+  background: transparent;
+  display: block;
+  border-radius: 30% !important;
+  position: absolute;
+  inset: 0 !important;
+  top: -2px !important;
+  left: 2px !important;
+  width: 100%;
+  height: 100% !important;
+}
+
+.wrapper__58105.overlay__58105 .item__58105:not([style*="height: 8px"]) {
+  border-color: transparent;
+  background-color: initial;
+}
+
+/* Hide DM Unread Indicators */
+#guild-list-unread-dms .item__58105,
+#guild-list-unread-dms .pill_ed9a5f {
+  display: none !important;
+}
+
+/* Hide Default Home Icon */
+.wrapper__6e9f8 .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 svg {
+  display: none;
+}
+
+/* Custom Home Icon */
+.listItemWrapper__91816
+.wrapper_cc5dd2
+.wrapper__6e9f8
+.childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 {
+  background-image: var(--home-icon-image);
+  background-size: var(--home-icon-image-zoom);
+  background-position: var(--home-icon-image-position);
+  background-repeat: no-repeat;
+}
+
+/* Transparent Panels */
+.member_c8ffbb,
+.nowPlayingColumn__133bf,
+.container__7d20c,
+.contentRegionScroller__23e6b,
+.channelAttachmentArea_b77158,
+.upload_aa605f,
+.codeView__4d95d,
+.panel__5dec7,
+.scroller__28a87,
+.membersWrap_c8ffbb,
+.titleContainer_e29cd7,
+.header_c6bf1b,
+.scroller__53543 {
+  background-color: transparent !important;
+}
+
+/* Hide Separators */
+.guildSeparator__252b6,
+.tutorialContainer__1f388 .listItem__650eb .pill__1f388.wrapper__58105 {
+  display: none;
+}
+
+/* Sidebar Text */
+
+/* Friends, Nitro, Shop and Quests */
+.link__972a0,
+.interactive__972a0,
+.children__9293f {
+  color: var(--main-theme-color) !important;
+  text-shadow:
+    0 0 3px rgba(255, 255, 255, 0.834),
+    0 0 6px rgba(255, 255, 255, 0.672);
+}
+
+/* Direct Messages */
+.privateChannels__35e86 [class*="name"],
+.privateChannels__35e86 [class*="channel"] {
+  color: var(--main-theme-color) !important;
+  text-shadow:
+    0 0 3px rgba(255, 255, 255, 0.929),
+    0 0 6px rgb(255, 255, 255);
+}
+
+/* Channels and Sidebar Items */
+.sidebar_c48ade [class*="name"],
+.sidebar_c48ade [class*="link"] {
+  color: var(--main-theme-color) !important;
+  text-shadow:
+    0 0 3px rgba(247, 247, 247, 0),
+    0 0 6px rgba(255, 255, 255, 0);
+}
+
+/* Selected Items */
+.modeSelected__2ea32 .name__2ea32,
+.selected__972a0,
+.selected__20a53 {
+  color: #000000 !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.983);
+}
+
+/* white Neon Icons */
+
+/* Chat Bar and User Panel Icons */
+.buttons__74017 svg,
+.attachButton__0923f svg,
+.toolbar__9293f svg,
+.panels__5e434 svg,
+.container__37e49 svg,
+.iconWrapper__9293f svg,
+.icon__9293f,
+.channelTextArea_f75fb0 svg {
+  color: var(--main-theme-color) !important;
+  filter:
+    drop-shadow(0 0 3px rgba(255, 255, 255, 0))
+    drop-shadow(0 0 7px rgba(0, 0, 0, 0));
+}
+
+/* Microphone, Headset and Settings Buttons */
+.button__67645,
+[aria-label*="Microfone"],
+[aria-label*="Headset"],
+[aria-label*="Configurações"] {
+  color: var(--main-theme-color) !important;
+  text-shadow:
+    0 0 4px rgb(0, 0, 0),
+    0 0 8px rgba(0, 0, 0, 0.751);
+}
+
+/* Message Box Icons */
+.attachButton__0923f,
+.button__201d5,
+.expression-picker-chat-input-button,
+.channelTextArea__74017 svg {
+  color: var(--main-theme-color) !important;
+  filter:
+    drop-shadow(0 0 4px rgb(103, 103, 103))
+    drop-shadow(0 0 8px rgb(173, 173, 173));
+}
